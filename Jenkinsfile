@@ -17,10 +17,6 @@ node {
       }
    }
    
-    stage('Archive') {
-        echo '归档构建'
-        archive 'pipeline-test/target/*.war'
-    }
 	
    stage('deploy'){
         //执行部署脚本
