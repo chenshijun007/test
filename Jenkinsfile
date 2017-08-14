@@ -16,6 +16,12 @@ node {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
    }
+   
+    stage('Archive') {
+        echo '归档构建'
+        archive 'pipeline-test/target/*.war'
+    }
+	
    stage('deploy'){
         //执行部署脚本
         echo "deploy ......" 
